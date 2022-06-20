@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="assets/bootstrap-5.0.2/css/bootstrap.min.css">
+      <script rel="stylesheet" href="assets/bootstrap-5.0.2/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <style>
+         .col-md-12{
+         padding: 0;
+         margin: 0;
+         }
+         .view-port{
+         width: 100% !important;
+         height: 99vh !important;
+         }
+         /* video {
+         object-fit:cover;
+         } */
+         #frame-container{
+         position: absolute; 
+         top: 0; 
+         left: 0;
+         }
+         .frames-container{
+         height: 125px; 
+         overflow-x: auto;
+         overflow-y: hidden; 
+         white-space: nowrap;
+         }
+         .frames{
+         height: 100px;
+         width: 100px;
+         margin: 5px;
+         display: inline-block;
+         }
+         .actions{
+         width: 99vw;
+         position: absolute;
+         /* top: 70vh; */
+         bottom: 10px;
+         z-index: 1;
+         margin: 5px;
+         }
+
+         #output-section{
+             display: none;
+         }
+      </style>
+   </head>
+   <body >
+      <div id="stream-section">
+        <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                  <video id="video" class="view-port" autoplay muted playsinline></video>
+                  <img class="view-port" id="frame-container">
+               </div>
+            </div>
+         </div>
+         <div class="actions">
+            <!-- <div class="d-flex justify-content-center">
+               <div class="frames-container">
+                
+               </div>
+            </div> -->
+            <div class="d-flex justify-content-center">
+               <div class="mt-2">
+                  <button class="btn btn-lg btn-danger" id="capture">CAPTURE</button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+      <div id="output-section">
+        <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                   <!-- <img id="result"> -->
+                    <canvas width=5000   height=5000 id="canvas" class="view-port"></canvas>
+               </div>
+            </div>
+         </div>
+         <div class="actions">
+            <div class="d-flex justify-content-center">
+               <div class="m-2">
+                  <button class="btn btn-lg btn-danger" id="delete">DELETE</button>
+               </div>
+               <div class="m-2">
+                <button class="btn btn-lg btn-success" id="save">SAVE</button>
+             </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script src="script.js"></script>
+</html>
